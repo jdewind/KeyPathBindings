@@ -27,7 +27,11 @@ Example
       
       [peopleHolder bindProperty:@"people" onTarget:holder toKeyPath:@"people"];
       [petsHolder bindProperty:@"pets" onTarget:holder toKeyPath:@"pets"];
-
+      
+      petsHolder.people = newPeople;
+      NSCAssert(holder.people == peopleHolder.people);
+      petsHolder.pets = newPets;
+      NSCAssert(holder.pets == petsHolder.pets);
 
 Authors
 =======
