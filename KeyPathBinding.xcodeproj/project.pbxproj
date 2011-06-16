@@ -24,8 +24,8 @@
 		4B3F484013A99A9A00992B32 /* MAWeakDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B3F47C413A996DD00992B32 /* MAWeakDictionary.m */; };
 		4B3F484113A99A9B00992B32 /* MAZeroingWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B3F47C613A996DD00992B32 /* MAZeroingWeakProxy.m */; };
 		4B3F484213A99A9C00992B32 /* MAZeroingWeakRef.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B3F47C813A996DD00992B32 /* MAZeroingWeakRef.m */; };
-		4B3F494C13A99C5400992B32 /* Cedar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B3F494A13A99C5400992B32 /* Cedar.framework */; };
-		4B3F494D13A99C5400992B32 /* OCHamcrest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B3F494B13A99C5400992B32 /* OCHamcrest.framework */; };
+		4BD046C713A9A08B00EEF4AC /* Cedar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BD046C513A9A08B00EEF4AC /* Cedar.framework */; };
+		4BD046C813A9A08B00EEF4AC /* OCHamcrest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BD046C613A9A08B00EEF4AC /* OCHamcrest.framework */; };
 		8DD76FAC0486AB0100D96B5E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 08FB7796FE84155DC02AAC07 /* main.m */; settings = {ATTRIBUTES = (); }; };
 /* End PBXBuildFile section */
 
@@ -61,8 +61,8 @@
 		4B3F481313A998FC00992B32 /* NSObjectKeyPathBindingSpecs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSObjectKeyPathBindingSpecs.m; sourceTree = "<group>"; };
 		4B3F482213A999BE00992B32 /* SpecHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecHelper.h; sourceTree = "<group>"; };
 		4B3F482313A999BE00992B32 /* SpecHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecHelper.m; sourceTree = "<group>"; };
-		4B3F494A13A99C5400992B32 /* Cedar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Cedar.framework; sourceTree = "<group>"; };
-		4B3F494B13A99C5400992B32 /* OCHamcrest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OCHamcrest.framework; sourceTree = "<group>"; };
+		4BD046C513A9A08B00EEF4AC /* Cedar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cedar.framework; path = Frameworks/Cedar.framework; sourceTree = "<group>"; };
+		4BD046C613A9A08B00EEF4AC /* OCHamcrest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCHamcrest.framework; path = Frameworks/OCHamcrest.framework; sourceTree = "<group>"; };
 		8DD76FB20486AB0100D96B5E /* NSObjectKeyPathBinding */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = NSObjectKeyPathBinding; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -72,8 +72,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B3F483213A99A5500992B32 /* Foundation.framework in Frameworks */,
-				4B3F494C13A99C5400992B32 /* Cedar.framework in Frameworks */,
-				4B3F494D13A99C5400992B32 /* OCHamcrest.framework in Frameworks */,
+				4BD046C713A9A08B00EEF4AC /* Cedar.framework in Frameworks */,
+				4BD046C813A9A08B00EEF4AC /* OCHamcrest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,8 +122,8 @@
 		4B3F47A713A995DA00992B32 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4B3F494A13A99C5400992B32 /* Cedar.framework */,
-				4B3F494B13A99C5400992B32 /* OCHamcrest.framework */,
+				4BD046C513A9A08B00EEF4AC /* Cedar.framework */,
+				4BD046C613A9A08B00EEF4AC /* OCHamcrest.framework */,
 				4B3F47A813A995F300992B32 /* Foundation.framework */,
 			);
 			name = Frameworks;
