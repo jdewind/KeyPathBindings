@@ -1,0 +1,3 @@
+[submodule "MAZeroingWeakRef"]
+	path = MAZeroingWeakRef
+	url = https://github.com/mikeash/MAZeroingWeakRef
