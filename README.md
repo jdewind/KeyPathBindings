@@ -8,30 +8,20 @@ _Note: This library subclasses observed objects -- which means already KVO'd obj
 Example
 ========
 
-      @class PeopleHolder, PetsHolder;
-      
-      @interface MammalHolder : NSObject
+      @interface MySlider : NSObject
       {
-        NSArray *people;
-        NSArray *pets;
+        CGFloat percentComplete
       }
 
-      @property(nonatomic, retain) NSArray *people;
-      @property(nonatomic, retain) NSArray *pets;
-      @end
-      
-      @implementation Holder
+      @property(nonatomic, assign) CGFloat *percentComplete;
       @end
       
       ...
       
-      [peopleHolder bindProperty:@"people" onTarget:holder toKeyPath:@"people"];
-      [petsHolder bindProperty:@"pets" onTarget:holder toKeyPath:@"pets"];
+      [request bindProperty:@"percentComplete" onTarget:mySlider toKeyPath:@"percent"];
       
-      petsHolder.people = newPeople;
-      NSCAssert(holder.people == peopleHolder.people);
-      petsHolder.pets = newPets;
-      NSCAssert(holder.pets == petsHolder.pets);
+      request.percent = 0.54f;
+      NSCAssert(mySlider.percentComplete == request.percent);
 
 Authors
 =======
