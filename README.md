@@ -1,7 +1,10 @@
 Description
 ===========
 
+http://spin.atomicobject.com/2011/06/16/objective-c-keypath-bindings/
+
 KeyPathBindings is a library for binding a property to a key path on another object. This can be particularly useful when you want a property on an object to mirror a property on another object. The library can optionally be configured with [MAZeroingWeakRef](https://github.com/mikeash/MAZeroingWeakRef) to automatically zero bindings.
+
 
 _Note: This library subclasses observed objects -- which means already KVO'd objects will not work._
 
