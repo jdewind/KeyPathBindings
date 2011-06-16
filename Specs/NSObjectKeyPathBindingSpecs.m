@@ -1,5 +1,5 @@
 #import "SpecHelper.h"
-#import "NSObject+KeyPathBinding.h"
+#import "NSObject+KeyPathBindings.h"
 
 @interface Photo : NSObject
 {
@@ -104,12 +104,14 @@ it(@"can bind a property to a property that is contained in another property", ^
   assertThat([m(@"observer") boundPhotoCaption], is(@"My Caption"));  
 });
 
+#if USE_ZEROING_WEAK_REFERENCES
 it(@"is OK when a observer object is released", ^{
   id observer = [[KeyPathBinding_Observer alloc] init];
   [m(@"observed") bindProperty:@"boundPhotoCaption" onTarget:observer toKeyPath:@"photo.caption"];
   [observer release];
   [[m(@"observed") photo] setCaption:@"My Caption"];
 });
+#endif
 
 it(@"an object can unbind itself", ^{
   [m(@"observed") bindProperty:@"boundPhotoCaption" onTarget:m(@"observer") toKeyPath:@"photo.caption"];

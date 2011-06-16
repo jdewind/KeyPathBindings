@@ -1,4 +1,4 @@
-#import "NSObject+KeyPathBinding.h"
+#import "NSObject+KeyPathBindings.h"
 #import "MAWeakDictionary.h"
 #import <pthread.h>
 #import <objc/runtime.h>
@@ -7,6 +7,21 @@ static void *kBindingContext = &kBindingContext;
 static pthread_mutex_t gMutex = PTHREAD_MUTEX_INITIALIZER;
 static NSMutableSet *gCustomSubclasses;
 static NSMutableDictionary *gCustomSubclassMap;
+
+#pragma mark -
+#pragma mark Utilities
+
+// No-ops for non-retaining objects.
+static const void* RetainNoOp(CFAllocatorRef allocator, const void *value) { return value; }
+static void ReleaseNoOp(CFAllocatorRef allocator, const void *value) { }
+
+static NSMutableDictionary* CreateNonRetainingDictionary() {
+  CFDictionaryKeyCallBacks keyCallbacks = kCFTypeDictionaryKeyCallBacks;
+  CFDictionaryValueCallBacks callbacks = kCFTypeDictionaryValueCallBacks;
+  callbacks.retain = RetainNoOp;
+  callbacks.release = ReleaseNoOp;
+  return (NSMutableDictionary*)CFDictionaryCreateMutable(nil, 0, &keyCallbacks, &callbacks);
+}
 
 #pragma mark -
 #pragma mark Custom Binding Class Lookup
@@ -111,7 +126,7 @@ static void EnsureCustomSubclass(id obj)
 
 #pragma mark -
 
-@implementation NSObject(KeyPathBinding)
+@implementation NSObject(KeyPathBindings)
 
 - (void)bindProperty:(NSString *)property onTarget:(id)target toKeyPath:(NSString *)keyPath {
   EnsureCustomSubclass(self);
@@ -129,7 +144,7 @@ static void EnsureCustomSubclass(id obj)
     [self addObserver:self forKeyPath:keyPath options:NSKeyValueObservingOptionNew context:kBindingContext];
   }
   
-  NSMutableDictionary *targetInfo = [[[MAWeakDictionary alloc] init] autorelease];
+  NSMutableDictionary *targetInfo = USE_ZEROING_WEAK_REFERENCES ? [[[MAWeakDictionary alloc] init] autorelease] : CreateNonRetainingDictionary();
   [targetInfo setObject:target forKey:@"target"];
   [targetInfo setObject:property forKey:@"property"];
   [targets addObject:targetInfo];

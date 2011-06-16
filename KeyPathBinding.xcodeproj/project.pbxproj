@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4B3F47A913A995F300992B32 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B3F47A813A995F300992B32 /* Foundation.framework */; };
-		4B3F47B113A9966700992B32 /* NSObject+KeyPathBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B3F47B013A9966700992B32 /* NSObject+KeyPathBinding.m */; };
+		4B3F47B113A9966700992B32 /* NSObject+KeyPathBindings.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B3F47B013A9966700992B32 /* NSObject+KeyPathBindings.m */; };
 		4B3F47C913A996DD00992B32 /* MANotificationCenterAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B3F47C013A996DD00992B32 /* MANotificationCenterAdditions.m */; };
 		4B3F47CA13A996DD00992B32 /* MAWeakArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B3F47C213A996DD00992B32 /* MAWeakArray.m */; };
 		4B3F47CB13A996DD00992B32 /* MAWeakDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B3F47C413A996DD00992B32 /* MAWeakDictionary.m */; };
@@ -16,7 +16,7 @@
 		4B3F47CD13A996DD00992B32 /* MAZeroingWeakRef.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B3F47C813A996DD00992B32 /* MAZeroingWeakRef.m */; };
 		4B3F480613A9989900992B32 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B3F480413A9986600992B32 /* main.m */; };
 		4B3F481413A998FC00992B32 /* NSObjectKeyPathBindingSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B3F481313A998FC00992B32 /* NSObjectKeyPathBindingSpecs.m */; };
-		4B3F481613A9991500992B32 /* NSObject+KeyPathBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B3F47B013A9966700992B32 /* NSObject+KeyPathBinding.m */; };
+		4B3F481613A9991500992B32 /* NSObject+KeyPathBindings.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B3F47B013A9966700992B32 /* NSObject+KeyPathBindings.m */; };
 		4B3F482413A999BE00992B32 /* SpecHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B3F482313A999BE00992B32 /* SpecHelper.m */; };
 		4B3F483213A99A5500992B32 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B3F47A813A995F300992B32 /* Foundation.framework */; };
 		4B3F483E13A99A9800992B32 /* MANotificationCenterAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B3F47C013A996DD00992B32 /* MANotificationCenterAdditions.m */; };
@@ -44,8 +44,8 @@
 /* Begin PBXFileReference section */
 		08FB7796FE84155DC02AAC07 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4B3F47A813A995F300992B32 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		4B3F47AF13A9966700992B32 /* NSObject+KeyPathBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+KeyPathBinding.h"; sourceTree = "<group>"; };
-		4B3F47B013A9966700992B32 /* NSObject+KeyPathBinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+KeyPathBinding.m"; sourceTree = "<group>"; };
+		4B3F47AF13A9966700992B32 /* NSObject+KeyPathBindings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+KeyPathBindings.h"; sourceTree = "<group>"; };
+		4B3F47B013A9966700992B32 /* NSObject+KeyPathBindings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+KeyPathBindings.m"; sourceTree = "<group>"; };
 		4B3F47BF13A996DD00992B32 /* MANotificationCenterAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MANotificationCenterAdditions.h; path = MAZeroingWeakRef/Source/MANotificationCenterAdditions.h; sourceTree = "<group>"; };
 		4B3F47C013A996DD00992B32 /* MANotificationCenterAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MANotificationCenterAdditions.m; path = MAZeroingWeakRef/Source/MANotificationCenterAdditions.m; sourceTree = "<group>"; };
 		4B3F47C113A996DD00992B32 /* MAWeakArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MAWeakArray.h; path = MAZeroingWeakRef/Source/MAWeakArray.h; sourceTree = "<group>"; };
@@ -103,8 +103,8 @@
 		08FB7795FE84155DC02AAC07 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				4B3F47AF13A9966700992B32 /* NSObject+KeyPathBinding.h */,
-				4B3F47B013A9966700992B32 /* NSObject+KeyPathBinding.m */,
+				4B3F47AF13A9966700992B32 /* NSObject+KeyPathBindings.h */,
+				4B3F47B013A9966700992B32 /* NSObject+KeyPathBindings.m */,
 				08FB7796FE84155DC02AAC07 /* main.m */,
 			);
 			path = Source;
@@ -226,7 +226,7 @@
 			files = (
 				4B3F480613A9989900992B32 /* main.m in Sources */,
 				4B3F481413A998FC00992B32 /* NSObjectKeyPathBindingSpecs.m in Sources */,
-				4B3F481613A9991500992B32 /* NSObject+KeyPathBinding.m in Sources */,
+				4B3F481613A9991500992B32 /* NSObject+KeyPathBindings.m in Sources */,
 				4B3F482413A999BE00992B32 /* SpecHelper.m in Sources */,
 				4B3F483E13A99A9800992B32 /* MANotificationCenterAdditions.m in Sources */,
 				4B3F483F13A99A9900992B32 /* MAWeakArray.m in Sources */,
@@ -241,7 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DD76FAC0486AB0100D96B5E /* main.m in Sources */,
-				4B3F47B113A9966700992B32 /* NSObject+KeyPathBinding.m in Sources */,
+				4B3F47B113A9966700992B32 /* NSObject+KeyPathBindings.m in Sources */,
 				4B3F47C913A996DD00992B32 /* MANotificationCenterAdditions.m in Sources */,
 				4B3F47CA13A996DD00992B32 /* MAWeakArray.m in Sources */,
 				4B3F47CB13A996DD00992B32 /* MAWeakDictionary.m in Sources */,
