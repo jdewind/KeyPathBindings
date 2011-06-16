@@ -24,7 +24,7 @@ static NSMutableDictionary* CreateNonRetainingDictionary() {
 }
 
 #pragma mark -
-#pragma mark Custom Binding Class Lookup
+#pragma mark Custom Binding Class Lookup (Credit: Mike Ash)
 
 static Class GetCustomSubclass(id obj)
 {
