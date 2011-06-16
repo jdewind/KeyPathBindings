@@ -59,6 +59,9 @@ static void ObserveValueForKeyPath(id obj, SEL sel, NSString *keyPath, id change
 {
   NSMutableDictionary *keyPathToPropertyMappings = objc_getAssociatedObject(obj, @"keyPathToPropertyMappings");
   
+  // If we want to support KVO inheritance in the future this context check
+  // will not work.
+  
   if (context == kBindingContext) {
     NSMutableArray *targets = [keyPathToPropertyMappings objectForKey:keyPath];
     for (NSMutableDictionary *targetInfo in targets) {
