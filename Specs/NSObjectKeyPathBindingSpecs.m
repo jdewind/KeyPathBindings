@@ -97,7 +97,7 @@ it(@"supports binding to different targets", ^{
   assertThat([anotherObserver boundString], is(@"World"));
 });
 
-it(@"can bind a property to a property that is contained in another property", ^{
+it(@"can bind a property to a keypath on an object", ^{
   [m(@"observed") bindProperty:@"boundPhotoCaption" onTarget:m(@"observer") toKeyPath:@"photo.caption"];
   assertThat([m(@"observer") boundPhotoCaption], is(@"hello"));
   [[m(@"observed") photo] setCaption:@"My Caption"];
