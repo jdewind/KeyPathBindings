@@ -3,6 +3,8 @@
 #import <pthread.h>
 #import <objc/runtime.h>
 
+#define OVERLOAD_DESCRIPTION_METHOD 1
+
 static void *kBindingContext = &kBindingContext;
 static pthread_mutex_t gMutex = PTHREAD_MUTEX_INITIALIZER;
 static NSMutableSet *gCustomSubclasses;
@@ -77,6 +79,11 @@ static void ObserveValueForKeyPath(id obj, SEL sel, NSString *keyPath, id change
    
 }
 
+static Class CustomClass(id obj, SEL sel)
+{
+  return GetRealSuperclass(obj);
+}
+
 #pragma mark -
 #pragma mark Create and Register Subclasses
 
@@ -91,6 +98,10 @@ static Class CreateCustomSubclass(Class class)
   class_addMethod(subclass, @selector(observeValueForKeyPath:ofObject:change:context:), (IMP)ObserveValueForKeyPath, method_getTypeEncoding(observeValueForKeyPath));  
   Method dealloc = class_getInstanceMethod(class, @selector(dealloc));
   class_addMethod(subclass, @selector(dealloc), (IMP)CustomDealloc, method_getTypeEncoding(dealloc));  
+#if OVERLOAD_CLASS_METHOD
+  Method dealloc = class_getInstanceMethod(class, @selector(class));
+  class_addMethod(subclass, @selector(class), (IMP)CustomClass, method_getTypeEncoding(class));    
+#endif
   
   objc_registerClassPair(subclass);
   
